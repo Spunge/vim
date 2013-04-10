@@ -23,6 +23,7 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'mattn/zencoding-vim'
 Bundle 'docunext/closetag.vim'
+Bundle 'tpope/vim-surround'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'Lokaltog/powerline'
 "Bundle 'Lokaltog/vim-powerline'
@@ -43,7 +44,14 @@ filetype plugin indent on     " required!
 
 " NOTE: comments after Bundle command are not allowed..
 
+" Solarized settings
 set background=dark
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+let g:solarized_contrast="high"
+let g:solarized_visibility="high"
+colo solarized 
+
 set encoding=utf-8
 set cpoptions+=$
 set gcr=a:blinkon0
@@ -71,8 +79,6 @@ set nomodeline	" ignore vim modelines
 set laststatus=2 " always show statusline
 "set clipboard+=unnamed " use system clipboard for yanking text
 
-colo solarized 
-
 " Custom statusline
 let g:bufstat_active_hl_group = "Comment"
 "let g:bufstat_inactive_hl_group = "Statement"
@@ -81,6 +87,7 @@ let g:bufstat_number_before_bufname = 0
 let g:bufstat_alternate_list_char = ''
 let g:bufstat_surround_flags = ':'
 
+" Statusline stuff alex made, TODO go use tabs u silly
 set statusline=
 set statusline+=%=	 "the right part
 set statusline+=%m	 "modified flag
