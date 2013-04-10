@@ -21,6 +21,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-markdown'
+Bundle 'mattn/zencoding-vim'
+Bundle 'docunext/closetag.vim'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'Lokaltog/powerline'
 "Bundle 'Lokaltog/vim-powerline'
@@ -43,6 +45,7 @@ filetype plugin indent on     " required!
 
 set background=dark
 set encoding=utf-8
+set cpoptions+=$
 set gcr=a:blinkon0
 set autoindent
 set tabstop=4
@@ -92,6 +95,10 @@ nnoremap <silent> <C-k> :bn<CR>
 nnoremap <silent> <C-j> :bp<CR>
 
 map <C-n> :NERDTreeToggle<CR>
+
+" Make enter & shift enter insert a newline without entering insert mode
+map <S-Enter> O<Esc>
+map <CR> o <Esc>
 
 " map <leader>/ to turn off search highlight
 nnoremap <Leader>/ :noh<CR>
