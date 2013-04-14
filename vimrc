@@ -67,7 +67,9 @@ set number
 set guioptions-=T
 syntax on
 
-let mapleader=","
+
+
+
 set hidden		" allow buffers with unsaved changes
 set mouse=a		" enable mouse scrolling and clicking in iTerm
 set wildmenu	" expand vim commands like :tabe
@@ -107,8 +109,15 @@ map <C-n> :NERDTreeToggle<CR>
 map <S-Enter> O<Esc>
 map <CR> o <Esc>
 
+let mapleader=","
 " map <leader>/ to turn off search highlight
 nnoremap <Leader>/ :noh<CR>
+" Make it easy to edit files from same directory as current file
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+map <leader>ew :e %%
+map <leader>es :sp %%
+map <leader>ev :vsp %%
+map <leader>et :tabe %%
 
 " set snippet dir
 let g:snippets_dir = '~/code/dotfiles/vimsnippets/'
