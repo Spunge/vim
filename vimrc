@@ -22,7 +22,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'mattn/zencoding-vim'
-Bundle 'docunext/closetag.vim'
+"Bundle 'docunext/closetag.vim'
 Bundle 'tpope/vim-surround'
 "Bundle 'Lokaltog/vim-easymotion'
 "Bundle 'Lokaltog/powerline'
@@ -99,9 +99,12 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-" faster buffer switching
-nnoremap <silent> <C-l> :bn<CR>
-nnoremap <silent> <C-h> :bp<CR>
+" remap buffer switching
+nnoremap <silent> <C-k> :bn<CR>
+nnoremap <silent> <C-j> :bp<CR>
+" remap tab switching
+nnoremap <silent> <C-l> :tabn<CR>
+nnoremap <silent> <C-h> :tabp<CR>
 
 map <C-n> :NERDTreeToggle<CR>
 
