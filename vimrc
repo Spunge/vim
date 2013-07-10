@@ -4,46 +4,35 @@ filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" NOTE: comments after Bundle command are not allowed..
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
 
-" My Bundles here:
-"
-" original repos on github
+" Github repos
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/ctrlp.vim'
 Bundle 'xolox/vim-easytags'
 Bundle 'xolox/vim-misc'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
-Bundle 'rson/vim-bufstat'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'msanders/snipmate.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'mattn/zencoding-vim'
-"Bundle 'docunext/closetag.vim'
+Bundle 'bling/vim-bufferline'
+Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-surround'
-"Bundle 'Lokaltog/vim-easymotion'
-"Bundle 'Lokaltog/powerline'
-"Bundle 'Lokaltog/vim-powerline'
-"Bundle 'sjbach/lusty'
-"Bundle 'Valloric/YouCompleteMe'
-"Bundle 'spf13/PIV'
 
 " vim-scripts repos
 Bundle 'AutoClose'
-"Bundle 'L9'
-"Bundle 'FuzzyFinder'
 
-" non github repos
+" Non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
-filetype plugin indent on     " required!
-
-" NOTE: comments after Bundle command are not allowed..
+filetype plugin indent on " required!
 
 " Solarized settings
 set background=dark
@@ -68,9 +57,6 @@ set number
 set guioptions-=T
 syntax on
 
-
-
-
 set hidden		" allow buffers with unsaved changes
 set mouse=a		" enable mouse scrolling and clicking in iTerm
 set wildmenu	" expand vim commands like :tabe
@@ -80,25 +66,6 @@ set nobackup	" no backup file clutter
 set noswapfile	" never used it
 set nomodeline	" ignore vim modelines
 set laststatus=2 " always show statusline
-"set clipboard+=unnamed " use system clipboard for yanking text
-
-" Custom statusline
-let g:bufstat_active_hl_group = "Comment"
-"let g:bufstat_inactive_hl_group = "Statement"
-let g:bufstat_inactive_hl_group = "LineNr"
-let g:bufstat_number_before_bufname = 0
-let g:bufstat_alternate_list_char = ''
-let g:bufstat_surround_flags = ':'
-
-" Statusline stuff alex made, TODO go use tabs u silly
-set statusline=
-set statusline+=%=	 "the right part
-set statusline+=%m	 "modified flag
-set statusline+=\ L%l:C%c   "line number and columns
-set statusline+=\ %P\    "percentage thru file
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 " remap buffer switching
 nnoremap <silent> <C-k> :bn<CR>
@@ -125,6 +92,13 @@ map <leader>et :tabe %%
 
 " set snippet dir
 let g:snippets_dir = '~/code/dotfiles/vimsnippets/'
+
+" Bufferline is also printing to statusline, do not want :F
+let g:bufferline_echo = 0
+"let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '◀'
+let g:airline_theme='badwolf'
+let g:airline_powerline_fonts=1
 
 " tagbar autofocus and autoclose
 nmap <F8> :TagbarToggle<CR>
