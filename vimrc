@@ -80,6 +80,9 @@ map <C-n> :NERDTreeToggle<CR>
 map <S-Enter> O<Esc>
 map <CR> o <Esc>
 
+" Use space as ex command unit (:)
+map <Space> :
+
 let mapleader=","
 " map <leader>/ to turn off search highlight
 nnoremap <Leader>/ :noh<CR>
@@ -126,3 +129,14 @@ if filereadable(s:extrarc)
     exec ':so ' . s:extrarc
 endif
 
+" hg diff stuff
+function! Hgdiff()             
+	vnew                       
+	silent r !hg diff          
+	0                          
+	set filetype=diff          
+	setlocal buftype=nofile    
+	setlocal noswapfile        
+	wincmd w                   
+endfunction                    
+command! Hgdiff call Hgdiff() 
