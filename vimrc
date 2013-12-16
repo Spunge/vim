@@ -111,6 +111,8 @@ let g:tagbar_iconchars = ['▾', '▸']
 
 let g:ctrlp_tabpage_position = 'ac'
 
+" Ignore compiled python
+set wildignore+=*/tmp/*,*.pyc
 " dont look at .hg dirs to decide where current working dir is, messes up with
 " subrepos
 let g:ctrlp_working_path_mode = '0'
