@@ -24,6 +24,7 @@ Bundle 'mattn/emmet-vim'
 Bundle 'bling/vim-bufferline'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-surround'
+Bundle 'shutnik/jshint2.vim'
 
 " vim-scripts repos
 Bundle 'AutoClose'
@@ -50,6 +51,11 @@ set tabstop=4
 set shiftwidth=4
 set noexpandtab
 set nowrap
+
+" Temp text wrapping
+"set textwidth=79
+"set formatoptions+=t
+
 set hlsearch
 set incsearch
 set ignorecase
@@ -112,10 +118,13 @@ let g:tagbar_iconchars = ['▾', '▸']
 let g:ctrlp_tabpage_position = 'ac'
 
 " Ignore compiled python
-set wildignore+=*/tmp/*,*.pyc
+set wildignore+=*/tmp/*,*.pyc,*/node_modules/*,*/bower_components/*
 " dont look at .hg dirs to decide where current working dir is, messes up with
 " subrepos
 let g:ctrlp_working_path_mode = '0'
+
+" Ignore certain files
+let g:ctrlp_custom_ignore = '\v[\/]\.(node_modules|bower_components|git|hg|svn)$'
 
 " let easytags look for tags file in project
 set tags=./.tags;
@@ -130,6 +139,8 @@ let s:extrarc = expand($HOME . '/.vimrc.local')
 if filereadable(s:extrarc)
     exec ':so ' . s:extrarc
 endif
+
+autocmd BufLeave,FocusLost * silent! wall
 
 " hg diff stuff
 function! Hgdiff()             
