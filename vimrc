@@ -25,6 +25,8 @@ Bundle 'bling/vim-bufferline'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-surround'
 Bundle 'shutnik/jshint2.vim'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'chase/vim-ansible-yaml'
 
 " vim-scripts repos
 Bundle 'AutoClose'
@@ -42,6 +44,8 @@ let g:solarized_termcolors=256
 let g:solarized_contrast="high"
 let g:solarized_visibility="high"
 colo solarized 
+
+let g:ansible_options = {'ignore_blank_lines': 0}
 
 set encoding=utf-8
 set cpoptions+=$
