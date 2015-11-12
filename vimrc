@@ -27,6 +27,9 @@ Bundle 'tpope/vim-surround'
 Bundle 'shutnik/jshint2.vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'chase/vim-ansible-yaml'
+Bundle 'moll/vim-node'
+Bundle 'blueyed/smarty.vim'
+Bundle 'cakebaker/scss-syntax.vim'
 
 " vim-scripts repos
 Bundle 'AutoClose'
@@ -83,6 +86,7 @@ nnoremap <silent> <C-j> :bp<CR>
 " remap tab switching
 nnoremap <silent> <C-l> :tabn<CR>
 nnoremap <silent> <C-h> :tabp<CR>
+vnoremap // y/<C-R>"<CR>"
 
 map <C-n> :NERDTreeToggle<CR>
 
@@ -122,7 +126,7 @@ let g:tagbar_iconchars = ['▾', '▸']
 let g:ctrlp_tabpage_position = 'ac'
 
 " Ignore compiled python
-set wildignore+=*/tmp/*,*.pyc,*/node_modules/*,*/bower_components/*
+set wildignore+=*/tmp/*,*.pyc,*/bower_components/*,*/node_modules/*
 " dont look at .hg dirs to decide where current working dir is, messes up with
 " subrepos
 let g:ctrlp_working_path_mode = '0'
