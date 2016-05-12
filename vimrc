@@ -49,6 +49,7 @@ let g:solarized_visibility="high"
 colo solarized 
 
 let g:ansible_options = {'ignore_blank_lines': 0}
+let g:user_emmet_leader_key='<C-Z>'
 
 set encoding=utf-8
 set cpoptions+=$
@@ -80,19 +81,45 @@ set noswapfile	" never used it
 set nomodeline	" ignore vim modelines
 set laststatus=2 " always show statusline
 
+" fix workman binding
+noremap l o
+noremap o l
+noremap L O
+noremap O L
+noremap j n
+noremap n j
+noremap J N
+noremap N J
+noremap k e
+noremap e k
+noremap K E
+noremap E <nop>
+noremap h y
+noremap y h
+noremap H Y
+noremap Y H
+
+" remap surround plugin	
+let g:surround_no_mappings = 1
+nmap ds  <Plug>Dsurround
+nmap cs  <Plug>Csurround
+nmap cS  <Plug>CSurround
+nmap hs  <Plug>Ysurround
+nmap hS  <Plug>YSurround
+nmap hss <Plug>Yssurround
+nmap hSs <Plug>YSsurround
+nmap hSS <Plug>YSsurround
+xmap S   <Plug>VSurround
+xmap gS  <Plug>VgSurround
+
+
 " remap buffer switching
-nnoremap <silent> <C-k> :bn<CR>
-nnoremap <silent> <C-j> :bp<CR>
-" remap tab switching
-nnoremap <silent> <C-l> :tabn<CR>
-nnoremap <silent> <C-h> :tabp<CR>
+map <C-y> :bn<CR>
+map <C-o> :bp<CR>
+" clear search results
 vnoremap // y/<C-R>"<CR>"
 
 map <C-n> :NERDTreeToggle<CR>
-
-" Make enter & shift enter insert a newline without entering insert mode
-map <S-Enter> O<Esc>
-map <CR> o <Esc>
 
 " Use space as ex command unit (:)
 map <Space> :
