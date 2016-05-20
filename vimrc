@@ -114,8 +114,8 @@ xmap gS  <Plug>VgSurround
 
 
 " remap buffer switching
-map <C-y> :bn<CR>
-map <C-o> :bp<CR>
+map <C-o> :bn<CR>
+map <C-y> :bp<CR>
 " clear search results
 vnoremap // y/<C-R>"<CR>"
 
