@@ -24,7 +24,7 @@ Bundle 'mattn/emmet-vim'
 Bundle 'bling/vim-bufferline'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-surround'
-Bundle 'shutnik/jshint2.vim'
+" Bundle 'shutnik/jshint2.vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'chase/vim-ansible-yaml'
 Bundle 'moll/vim-node'
@@ -37,6 +37,16 @@ Bundle 'AutoClose'
 " Non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
 " ...
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 
 filetype plugin indent on " required!
 
@@ -141,7 +151,7 @@ let g:snippets_dir = '~/code/dotfiles/vimsnippets/'
 let g:bufferline_echo = 0
 "let g:airline_left_sep = '▶'
 "let g:airline_right_sep = '◀'
-let g:airline_theme='badwolf'
+"let g:airline_theme='badwolf'
 let g:airline_powerline_fonts=1
 
 " tagbar autofocus and autoclose
