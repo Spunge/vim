@@ -27,6 +27,7 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'chase/vim-ansible-yaml'
 Bundle 'moll/vim-node'
 Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'Valloric/YouCompleteMe'
 
 " vim-scripts repos
 Bundle 'AutoClose'
